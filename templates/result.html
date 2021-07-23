@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Records | LC</title>
+</head>
+<style type="text/css">
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        height:70vh;
+    }
+    th:tr{
+        color: blue;
+
+    }
+    tr:nth-of-type(2n){
+        border: 1px solid black;
+        background-color: rgba(150, 150, 150, 0.5);
+
+    }
+
+    td{
+        padding: 8px 8px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <h4>Records</h4>
+    <table>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>PINCODE</th>
+        {% for record in results %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+      <h5><a href = "/enter-new/">enter new</a></h5>
+</body>
+</html>
